@@ -46,7 +46,7 @@
 
 		<script>
 
-			let camera, scene, renderer, plane, plane2;
+			let camera, scene, renderer, plane, plane2, plane3, plane4;
 			var video, texture;
 
 			// var Element = function ( id ) {
@@ -100,13 +100,13 @@
 				plane2.position.set(0, 1, 20);
         scene.add(plane2);
 
-				// plane3 = new THREE.Mesh( geometry, material );
-				// plane3.position.set(0, 1, -10);
-        // scene.add(plane3);
-        //
-				// plane4 = new THREE.Mesh( geometry, material );
-				// plane4.position.set(0, 1, -10);
-        // scene.add(plane4);
+				plane3 = new THREE.Mesh( geometry, material );
+				plane3.position.set(10, 10, -10);
+        scene.add(plane3);
+
+				plane4 = new THREE.Mesh( geometry, material );
+				plane4.position.set(-10, -10, -10);
+        scene.add(plane4);
 
         renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -149,6 +149,10 @@
 
 				plane.material.map = texture;
 				plane2.material.map = texture;
+				plane3.material.map = texture;
+				plane4.material.map = texture;
+
+
 
 				//scene.background = new THREE.Color( 0x101010 );
 
