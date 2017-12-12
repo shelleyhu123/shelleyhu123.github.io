@@ -90,23 +90,23 @@
         scene.add(camera);
 
         //Create a plane geo
-        const geometry = new THREE.PlaneGeometry( 25, 20, 2 );
+        const geometry = new THREE.PlaneGeometry( 25, 20, 32 );
         const material = new THREE.MeshBasicMaterial( {color: 0xffffff, side: THREE.DoubleSide} );
         plane = new THREE.Mesh( geometry, material );
 				plane.position.set(0, 1, -10);
         scene.add(plane);
 
-				// plane2 = new THREE.Mesh( geometry, material );
-				// plane2.position.set(0, 1, 20);
-        // scene.add(plane2);
+				plane2 = new THREE.Mesh( geometry, material );
+				plane2.rotation.y = 90;
+        scene.add(plane2);
         //
-				// plane3 = new THREE.Mesh( geometry, material );
-				// plane3.position.set(10, 1, 0);
-        // scene.add(plane3);
-        //
-				// plane4 = new THREE.Mesh( geometry, material );
-				// plane4.position.set(-10, -1, 0);
-        // scene.add(plane4);
+				plane3 = new THREE.Mesh( geometry, material );
+				plane3.rotation.y = -90;
+        scene.add(plane3);
+
+				plane4 = new THREE.Mesh( geometry, material );
+				plane4.position.set(-10, 1, 0);
+        scene.add(plane4);
 
         renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -148,9 +148,9 @@
 				texture.generateMipmaps = false;
 
 				plane.material.map = texture;
-				// plane2.material.map = texture;
-				// plane3.material.map = texture;
-				// plane4.material.map = texture;
+				plane2.material.map = texture;
+				plane3.material.map = texture;
+				plane4.material.map = texture;
 
 
 
